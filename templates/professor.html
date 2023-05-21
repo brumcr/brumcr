@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <hr>
+        <div class="row">
+
+                <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form_professor.csrf_token }}
+                    <legend>CADASTRE O PROFESSOR</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form_professor.nome.label(class="form-control-label") }}
+                            {{ form_professor.nome(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_professor.sobrenome.label(class="form-control-label") }}
+                            {{ form_professor.sobrenome(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_professor.cpf.label(class="form-check-label") }}
+                            {{ form_professor.cpf(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_professor.ddd.label(class="form-check-label") }}
+                            {{ form_professor.ddd(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_professor.telefone.label(class="form-check-label") }}
+                            {{ form_professor.telefone(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_professor.email.label(class="form-check-label") }}
+                            {{ form_professor.email(class="form-control") }}
+                        </div>
+                    </fieldset>
+                    {{ form_professor.botao_submit_professor(class="btn btn-primary mt-2") }}
+                </form>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <hr>
+        <div class="row">
+
+                <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form_disciplina.csrf_token }}
+                    <legend>CADASTRE A DISCIPLINA</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form_disciplina.nome.label(class="form-control-label") }}
+                            {{ form_disciplina.nome(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_disciplina.carga.label(class="form-control-label") }}
+                            {{ form_disciplina.carga(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_disciplina.cpf.label(class="form-check-label") }}
+                            {{ form_disciplina.cpf(class="form-control") }}
+                        </div>
+                    </fieldset>
+                    {{ form_disciplina.botao_submit_disciplina(class="btn btn-primary mt-2") }}
+                </form>
+
+        </div>
+    </div>
+
+{% endblock %}

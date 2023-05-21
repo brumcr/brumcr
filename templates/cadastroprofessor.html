@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro Professor</title>
+   <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+    </style>
+</head>
+<body>
+    <h1>Cadastro Professor</h1>
+    <button onclick="location.href='/'">Voltar para o Menu Principal</button>
+   <form>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome">
+      <br>
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade">
+      <br>
+      <label for="curso">Curso:</label>
+      <input type="text" id="curso" name="curso">
+      <br>
+      <input type="button" value="Salvar" onclick="salvarDados()">
+    </form>
+    <br>
+    <h2>Dados Inseridos:</h2>
+    <table id="tabela">
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Curso</th>
+      </tr>
+    </table>
+    <script>
+      function salvarDados() {
+        var nome = document.getElementById("nome").value;
+        var idade = document.getElementById("idade").value;
+        var curso = document.getElementById("curso").value;
+        var tabela = document.getElementById("tabela");
+        var linha = tabela.insertRow(-1);
+        var colunaNome = linha.insertCell(0);
+        var colunaIdade = linha.insertCell(1);
+        var colunaCurso = linha.insertCell(2);
+        colunaNome.innerHTML = nome;
+        colunaIdade.innerHTML = idade;
+        colunaCurso.innerHTML = curso;
+      }
+    </script>
+</body>
+</html>

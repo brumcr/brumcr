@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <hr>
+        <div class="row">
+
+                <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form_escola.csrf_token }}
+                    <legend>CADASTRE A ESCOLA</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form_escola.nome.label(class="form-control-label") }}
+                            {{ form_escola.nome(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_escola.logradouro.label(class="form-control-label") }}
+                            {{ form_escola.logradouro(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_escola.endereco.label(class="form-check-label") }}
+                            {{ form_escola.endereco(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_escola.cep.label(class="form-check-label") }}
+                            {{ form_escola.cep(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_escola.ddd.label(class="form-check-label") }}
+                            {{ form_escola.ddd(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_escola.telefone.label(class="form-check-label") }}
+                            {{ form_escola.telefone(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_escola.email.label(class="form-check-label") }}
+                            {{ form_escola.email(class="form-control") }}
+                        </div>
+                    </fieldset>
+                    {{ form_escola.botao_submit_escola(class="btn btn-primary mt-2") }}
+                </form>
+
+        </div>
+    </div>
+
+{% endblock %}

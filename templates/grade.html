@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <hr>
+        <div class="row">
+
+                <form method="POST" action="" class="border p-4 mt-2">
+                    {{ form_grade.csrf_token }}
+                    <legend>GRADE</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form_grade.nome.label(class="form-control-label") }}
+                            {{ form_grade.nome(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_grade.dia.label(class="form-control-label") }}
+                            {{ form_grade.dia(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_grade.disciplina.label(class="form-check-label") }}
+                            {{ form_grade.disciplina(class="form-control") }}
+                        </div>
+                       <div class="form-group">
+                            {{ form_grade.professor.label(class="form-check-label") }}
+                            {{ form_grade.professor(class="form-control") }}
+                        </div>
+                    </fieldset>
+                    {{ form_grade.botao_submit_grade(class="btn btn-primary mt-2") }}
+                </form>
+
+        </div>
+    </div>
+
+{% endblock %}
